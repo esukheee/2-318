@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>318 тоот танхим</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0B1020;--ink:#FFFFFF;--dim:rgba(255,255,255,.72);--card:rgba(255,255,255,.14);--card2:rgba(255,255,255,.22);
+--lek:#1F4FE0;--lek2:#1A8CFF;--lab:#E04F00;--lab2:#FF9410;--sem:#008F66;--sem2:#00B894;--pr:#7A2BE0;--pr2:#D63FC0;--free:#008A5A;--free2:#26B36A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1020}}
+:root[data-theme="dark"]{--bg:#0B1020}
+:root[data-theme="light"]{--bg:#0B1020}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variant-numeric:tabular-nums;overflow:hidden}
+.screen{height:100%;display:grid;grid-template-rows:auto 1fr auto auto;background:linear-gradient(135deg,var(--a1),var(--a2));transition:background .8s;--a1:var(--free);--a2:var(--free2)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:2.2vh 3vw;background:rgba(0,0,0,.18)}
+.room{display:flex;align-items:baseline;gap:1.4vw}
+.room b{font-size:clamp(40px,7vh,96px);font-weight:900;line-height:1;letter-spacing:-.02em}
+.room span{font-size:clamp(16px,2.2vh,28px);font-weight:600;color:var(--dim)}
+.clk{text-align:right}
+.clk b{font-size:clamp(36px,6.5vh,88px);font-weight:800;line-height:1;display:block}
+.clk span{font-size:clamp(14px,2vh,24px);color:var(--dim);font-weight:600}
+.main{display:grid;grid-template-columns:1fr auto;gap:3vw;padding:3.5vh 3vw;align-items:center;min-height:0}
+@media (max-aspect-ratio:1/1){.main{grid-template-columns:1fr}.stu{justify-self:start}}
+.state{display:inline-flex;align-items:center;gap:.6em;font-size:clamp(16px,2.6vh,32px);font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:rgba(0,0,0,.22);padding:.35em .9em;border-radius:100px}
+.dot{width:.7em;height:.7em;border-radius:50%;background:#fff}
+@media (prefers-reduced-motion:no-preference){.live .dot{animation:p 1.4s infinite}@keyframes p{50%{opacity:.2}}}
+.cn{font-size:clamp(32px,7.5vh,104px);font-weight:800;line-height:1.05;margin:2.2vh 0 1.6vh;letter-spacing:-.01em;text-wrap:balance}
+.tch{font-size:clamp(22px,4.4vh,60px);font-weight:700;display:flex;align-items:center;gap:.5em}
+.tch svg{width:1em;height:1em;flex:none}
+.info{display:flex;flex-wrap:wrap;gap:1.2vh 2.4vw;margin-top:2vh;font-size:clamp(16px,2.6vh,34px);font-weight:600;color:var(--dim)}
+.info b{color:#fff}
+.stu{background:rgba(255,255,255,.96);color:var(--a1);border-radius:3vh;padding:3vh 3vw;text-align:center;min-width:clamp(200px,24vw,420px);box-shadow:0 2vh 5vh rgba(0,0,0,.18)}
+.stu .n{font-size:clamp(72px,17vh,220px);font-weight:900;line-height:.95;letter-spacing:-.03em}
+.stu .l{font-size:clamp(16px,2.8vh,36px);font-weight:700;color:#1B2238}
+.stu .cap{font-size:clamp(14px,2.2vh,28px);font-weight:600;color:#5A6378;margin-top:.6vh}
+.stu .bar{height:1.2vh;background:#E4E8F0;border-radius:1vh;margin-top:1.6vh;overflow:hidden}
+.stu .bar i{display:block;height:100%;background:var(--a1)}
+.prog{padding:0 3vw 2.4vh}
+.pr-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.2vh}
+.pct{font-size:clamp(40px,9vh,120px);font-weight:900;line-height:1}
+.pct small{font-size:.32em;font-weight:700;color:var(--dim);margin-left:.4em}
+.left{font-size:clamp(18px,3.4vh,44px);font-weight:700;text-align:right}
+.left span{display:block;font-size:.6em;color:var(--dim);font-weight:600}
+.track{height:clamp(18px,3.2vh,40px);background:rgba(0,0,0,.25);border-radius:100px;position:relative;overflow:hidden}
+.fill{height:100%;background:#fff;border-radius:100px;transition:width .9s linear}
+.tick{position:absolute;top:0;bottom:0;width:4px;background:var(--a1);opacity:.9}
+.tl{display:grid;grid-template-columns:repeat(7,1fr);gap:.8vw;padding:2vh 3vw 2.6vh;background:rgba(0,0,0,.22)}
+.slot{border-radius:1.4vh;padding:1.2vh .9vw;min-height:10vh;background:rgba(255,255,255,.1);font-size:clamp(11px,1.7vh,22px);font-weight:600;line-height:1.25;position:relative;overflow:hidden}
+.slot .t{color:var(--dim);font-size:.9em}
+.slot .c{font-weight:800;font-size:1.1em;margin-top:.3vh}
+.slot .s{margin-top:.4vh}
+.slot.has{background:linear-gradient(135deg,var(--c1),var(--c2))}
+.slot.done{opacity:.4}
+.slot.cur{outline:.5vh solid #fff;outline-offset:-.5vh;box-shadow:0 0 0 .6vh rgba(255,255,255,.35)}
+.tlh{grid-column:1/-1;font-size:clamp(13px,1.9vh,24px);font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.slot.empty .c{color:var(--dim);font-weight:600}
+@media (max-width:700px){.tl{grid-template-columns:repeat(4,1fr)}body{overflow:auto}.screen{height:auto;min-height:100%}}
+.gear{position:fixed;right:1vw;bottom:1vh;background:none;border:0;color:rgba(255,255,255,.35);font-size:20px;cursor:pointer;padding:6px}
+.gear:hover,.gear:focus-visible{color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.set{position:fixed;right:1vw;bottom:6vh;background:#fff;color:#1B2238;border-radius:12px;padding:16px;display:none;gap:10px;flex-direction:column;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:320px}
+.set.open{display:flex}
+.set label{display:flex;flex-direction:column;gap:4px;font-weight:600}
+.set input,.set select{font:inherit;padding:6px 8px;border:1px solid #CDD3DE;border-radius:6px}
+.set p{margin:0;color:#5A6378;font-size:12px}
+.fs{font:inherit;font-weight:700;padding:8px;border:0;border-radius:6px;background:#1B2238;color:#fff;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="screen" id="scr">
+ <div class="top">
+  <div class="room"><b>318</b><span>2-р байр</span></div>
+  <div class="clk"><b id="clk">--:--</b><span id="dt"></span></div>
+ </div>
+ <div class="main" id="main" aria-live="polite"></div>
+ <div class="prog" id="prog"></div>
+ <div class="tl" id="tl"></div>
+</div>
+<button class="gear" id="gear" aria-label="Тохиргоо" aria-expanded="false">⚙</button>
+<div class="set" id="set">
+ <label>Семестр эхэлсэн өдөр <input type="date" id="sd"></label>
+ <label>Долоо хоног <select id="pm"><option value="auto">Автоматаар</option><option value="O">Сондгой</option><option value="E">Тэгш</option></select></label>
+ <p>1-р долоо хоногийг сондгой гэж тооцно. Улаанбаатарын цагаар.</p>
+ <button class="fs" id="fs">Бүтэн дэлгэц</button>
+</div>
+<script>
+const R=[{"d": 4, "p": 3, "w": "O", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 26, "cap": 26}, {"d": 4, "p": 4, "w": "O", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 26}, {"d": 4, "p": 3, "w": "E", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 25, "cap": 25}, {"d": 4, "p": 4, "w": "E", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 24}, {"d": 5, "p": 5, "w": "E", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 26, "cap": 26}, {"d": 5, "p": 6, "w": "E", "c": "I.ETM201", "n": "Электроник, микроэлектроник I", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 26}, {"d": 3, "p": 2, "w": "A", "c": "I.ETM721", "n": "Дэвшилтэт био-наноматериалууд", "t": "лекц", "tc": "Т.БАТГЭРЭЛ", "s": 0, "cap": 12}, {"d": 3, "p": 3, "w": "A", "c": "I.ETM721", "n": "Дэвшилтэт био-наноматериалууд", "t": "лаборатор", "tc": "Т.БАТГЭРЭЛ", "s": 0, "cap": 12}, {"d": 1, "p": 6, "w": "O", "c": "S.EAM200", "n": "Электроник, автоматикийн үндэс", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 24}, {"d": 1, "p": 7, "w": "O", "c": "S.EAM200", "n": "Электроник, автоматикийн үндэс", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 23, "cap": 24}, {"d": 1, "p": 2, "w": "O", "c": "S.EAM200", "n": "Электроник, автоматикийн үндэс", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 26, "cap": 26}, {"d": 1, "p": 3, "w": "O", "c": "S.EAM200", "n": "Электроник, автоматикийн үндэс", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 23}, {"d": 4, "p": 5, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БАТГЭРЭЛ", "s": 23, "cap": 23}, {"d": 4, "p": 6, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БАТГЭРЭЛ", "s": 0, "cap": 22}, {"d": 2, "p": 4, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 23, "cap": 23}, {"d": 2, "p": 5, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 23}, {"d": 2, "p": 4, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 23}, {"d": 2, "p": 5, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 22, "cap": 23}, {"d": 5, "p": 3, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 25, "cap": 24}, {"d": 5, "p": 4, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 0, "cap": 24}, {"d": 1, "p": 5, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 22, "cap": 22}, {"d": 1, "p": 6, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 0, "cap": 22}, {"d": 1, "p": 2, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 11, "cap": 22}, {"d": 1, "p": 3, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 22}, {"d": 4, "p": 5, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БАТГЭРЭЛ", "s": 0, "cap": 24}, {"d": 4, "p": 6, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БАТГЭРЭЛ", "s": 23, "cap": 24}, {"d": 5, "p": 1, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БОЛОРЦЭЦЭГ", "s": 25, "cap": 25}, {"d": 5, "p": 2, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БОЛОРЦЭЦЭГ", "s": 0, "cap": 24}, {"d": 5, "p": 1, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БОЛОРЦЭЦЭГ", "s": 0, "cap": 24}, {"d": 5, "p": 2, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Т.БОЛОРЦЭЦЭГ", "s": 24, "cap": 24}, {"d": 2, "p": 6, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 23, "cap": 23}, {"d": 2, "p": 7, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 0, "cap": 22}, {"d": 5, "p": 3, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 25, "cap": 25}, {"d": 5, "p": 4, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 0, "cap": 25}, {"d": 2, "p": 6, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 23, "cap": 23}, {"d": 2, "p": 7, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Б.ЭНХ-АМГАЛАН", "s": 0, "cap": 22}, {"d": 3, "p": 6, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 25, "cap": 25}, {"d": 3, "p": 7, "w": "O", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 24}, {"d": 3, "p": 6, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 0, "cap": 24}, {"d": 3, "p": 7, "w": "E", "c": "S.ECM201", "n": "Электроник", "t": "лаборатор", "tc": "Д.ӨЛЗИЙНОРОВ", "s": 24, "cap": 24}];
+const PT=[null,[460,550],[560,650],[660,750],[780,870],[880,970],[980,1070],[1080,1170],[1180,1270]];
+const DN=['Ням','Даваа','Мягмар','Лхагва','Пүрэв','Баасан','Бямба'];
+const COL={'лекц':['var(--lek)','var(--lek2)'],'семинар':['var(--sem)','var(--sem2)'],'лаборатор':['var(--lab)','var(--lab2)'],'практик':['var(--pr)','var(--pr2)']};
+const TN={'лекц':'Лекц','семинар':'Семинар','лаборатор':'Лаборатори','практик':'Практик'};
+const hm=m=>String(Math.floor(m/60)).padStart(2,'0')+':'+String(Math.floor(m%60)).padStart(2,'0');
+const nmT=s=>s.split('.').map((x,i)=>i===0?x:x.toLowerCase().split('-').map(y=>y.charAt(0).toUpperCase()+y.slice(1)).join('-')).join('.');
+const PERSON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7.5" r="4.5"/><path d="M3 21c0-4.4 4-7.5 9-7.5s9 3.1 9 7.5z"/></svg>';
+const store={get(k,d){try{const v=localStorage.getItem('r318:'+k);return v===null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem('r318:'+k,v)}catch(e){}}};
+let start=store.get('start','2026-09-01'),mode=store.get('mode','auto');
+const sd=document.getElementById('sd'),pm=document.getElementById('pm');sd.value=start;pm.value=mode;
+sd.onchange=()=>{if(sd.value){start=sd.value;store.set('start',start);tick(true)}};
+pm.onchange=()=>{mode=pm.value;store.set('mode',mode);tick(true)};
+const gear=document.getElementById('gear'),setp=document.getElementById('set');
+gear.onclick=()=>{const o=setp.classList.toggle('open');gear.setAttribute('aria-expanded',o)};
+document.getElementById('fs').onclick=()=>{const e=document.documentElement;(e.requestFullscreen||e.webkitRequestFullscreen||function(){}).call(e)};
+const sim=new URLSearchParams(location.search).get('t');const simOff=sim?new Date(sim+'+08:00')-Date.now():0;
+function ub(){const ms=Date.now()+simOff+8*3600e3,u=new Date(ms);return{y:u.getUTCFullYear(),mo:u.getUTCMonth()+1,d:u.getUTCDate(),wd:u.getUTCDay(),min:u.getUTCHours()*60+u.getUTCMinutes()+u.getUTCSeconds()/60,day:Math.floor(ms/864e5)}}
+function parity(day){if(mode!=='auto')return mode;const s=Date.UTC(...start.split('-').map((v,i)=>i===1?v-1:+v))/864e5;const mon=s-((new Date(s*864e5).getUTCDay()+6)%7);return(Math.floor((day-mon)/7)+1)%2?'O':'E'}
+function sessions(wd,par){const L=R.filter(x=>x.d===wd&&(x.w==='A'||x.w===par)).sort((a,b)=>a.p-b.p),S=[];
+ L.forEach(x=>{const l=S[S.length-1];if(l&&l.c===x.c&&l.t===x.t&&l.tc===x.tc&&l.p1===x.p-1){l.p1=x.p;l.end=PT[x.p][1];l.s=Math.max(l.s,x.s);l.cap=Math.max(l.cap,x.cap)}else S.push({...x,p0:x.p,p1:x.p,start:PT[x.p][0],end:PT[x.p][1]})});return S}
+function findNext(n){for(let k=0;k<15;k++){const day=n.day+k,wd=(n.wd+k)%7;if(wd<1||wd>5)continue;const S=sessions(wd,parity(day)).filter(s=>k>0||s.start>n.min);if(S.length)return{s:S[0],k,wd}}return null}
+const rel=(k,wd)=>k===0?'Өнөөдөр':k===1?'Маргааш':DN[wd];
+const parL=s=>s.p0===s.p1?s.p0+'-р пар':s.p0+'–'+s.p1+'-р пар';
+function stuCard(s,label){const f=s.cap?Math.min(100,s.s/s.cap*100):0;
+ return `<div class="stu"><div class="n">${s.s}</div><div class="l">${label}</div><div class="cap">${s.cap} суудлаас</div><div class="bar"><i style="width:${f}%"></i></div></div>`}
+let last='';
+function tick(force){
+ const n=ub(),par=parity(n.day);
+ document.getElementById('clk').textContent=hm(n.min);
+ document.getElementById('dt').textContent=`${DN[n.wd]}, ${n.mo}-р сарын ${n.d} · ${par==='O'?'Сондгой':'Тэгш'} 7 хоног`;
+ const S=(n.wd>=1&&n.wd<=5)?sessions(n.wd,par):[];
+ const cur=S.find(s=>n.min>=s.start&&n.min<s.end);
+ const scr=document.getElementById('scr'),main=document.getElementById('main'),prog=document.getElementById('prog');
+ if(cur){
+  const p=(n.min-cur.start)/(cur.end-cur.start),left=Math.ceil(cur.end-n.min);
+  scr.style.setProperty('--a1',COL[cur.t][0]);scr.style.setProperty('--a2',COL[cur.t][1]);
+  const key='c'+cur.start+par+n.day;
+  if(force||key!==last){last=key;
+   main.innerHTML=`<div><span class="state live"><span class="dot"></span>Хичээллэж байна · ${TN[cur.t]}</span>
+   <div class="cn">${cur.n}</div><div class="tch">${PERSON}${nmT(cur.tc)}</div>
+   <div class="info"><span>Код <b>${cur.c}</b></span><span><b>${parL(cur)}</b></span><span><b>${hm(cur.start)} – ${hm(cur.end)}</b></span></div></div>
+   ${stuCard(cur,'оюутан суралцаж байна')}`;}
+  const ticks=[];for(let q=cur.p0;q<cur.p1;q++)ticks.push(`<i class="tick" style="left:${(PT[q][1]+5-cur.start)/(cur.end-cur.start)*100}%"></i>`);
+  prog.style.display='';
+  prog.innerHTML=`<div class="pr-h"><div class="pct">${Math.floor(p*100)}%<small>өнгөрсөн</small></div><div class="left">${left} минут<span>${hm(cur.end)}-д дуусна</span></div></div>
+  <div class="track" role="progressbar" aria-valuenow="${Math.floor(p*100)}" aria-valuemin="0" aria-valuemax="100"><div class="fill" style="width:${p*100}%"></div>${ticks.join('')}</div>`;
+ }else{
+  scr.style.setProperty('--a1','var(--free)');scr.style.setProperty('--a2','var(--free2)');
+  const nx=findNext(n);
+  const head=S.length&&n.min>=S[S.length-1].end?'Өнөөдрийн хичээл дууссан':S.length&&n.min<S[0].start?'Хичээл удахгүй эхэлнэ':S.length?'Завсарлага':'Өнөөдөр хичээлгүй';
+  let wait='';if(nx&&nx.k===0){const m=Math.ceil(nx.s.start-n.min);wait=m>=60?`${Math.floor(m/60)} цаг ${m%60} минутын дараа`:`${m} минутын дараа`}
+  const key='f'+(nx?nx.k+'-'+nx.s.start:'')+head+wait+par;
+  if(force||key!==last){last=key;
+   main.innerHTML=`<div><span class="state"><span class="dot"></span>Танхим чөлөөтэй</span><div class="cn">${head}</div>
+   ${nx?`<div class="tch" style="font-size:clamp(18px,3.4vh,46px)">Дараагийн хичээл: ${rel(nx.k,nx.wd)} ${hm(nx.s.start)}${wait?' · '+wait:''}</div>
+   <div class="info"><span><b>${nx.s.n}</b></span><span>${TN[nx.s.t]}</span><span>${nmT(nx.s.tc)}</span></div>`:''}</div>
+   ${nx?stuCard(nx.s,'оюутан ирнэ'):''}`;}
+  prog.style.display='none';
+ }
+ // timeline
+ const tl=document.getElementById('tl');let TS=S,live=true,cap='Өнөөдрийн хуваарь';
+ if(!S.length){const nx=findNext(n);if(nx){TS=sessions(nx.wd,parity(n.day+nx.k));live=false;cap=(nx.k===1?'Маргаашийн':DN[nx.wd]+' гарагийн')+' хуваарь'}}
+ let h=`<div class="tlh">${cap}</div>`;
+ for(let p=1;p<=7;p++){const s=TS.find(x=>p>=x.p0&&p<=x.p1);
+  const st=!live?'':n.min>=PT[p][1]?'done':n.min>=PT[p][0]?'cur':'';
+  h+=s?`<div class="slot has ${st}" style="--c1:${COL[s.t][0]};--c2:${COL[s.t][1]}"><div class="t">${p}-р пар · ${hm(PT[p][0])}</div><div class="c">${s.c.replace(/^[A-Z]\./,'')}</div><div>${nmT(s.tc)}</div><div class="s">${s.s} оюутан</div></div>`
+   :`<div class="slot empty ${st}"><div class="t">${p}-р пар · ${hm(PT[p][0])}</div><div class="c">Сул</div></div>`}
+ tl.innerHTML=h;
+}
+tick(true);setInterval(tick,1000);
+</script>
+</body>
+</html>
